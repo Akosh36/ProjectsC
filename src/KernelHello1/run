@@ -1,0 +1,12 @@
+#!bin/bash
+
+echo "Run file runned."
+
+echo "Default remove hello task from kernel"
+rmmod hello
+echo "Run hello file with kernel"
+insmod hello.ko
+dmesg | tail -n 1
+echo "Delete hello task from kernel"
+rmmod hello
+dmesg | tail -n 1
